@@ -1,0 +1,10 @@
+[project]
+name = "gym-tracker"
+version = "0.1.0"
+description = "Data collection and analysis for the gym."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "cairosvg>=2.8.2",
+    "pygal>=3.0.5",
+]
