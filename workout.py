@@ -1,83 +1,49 @@
-import csv
-from dataclasses import dataclass, field
+from dataclasses import dataclass
+from enum import Enum
 from typing import List, Optional
 
+class MuscleGroup(Enum):
+    LEGS = "Legs", "Exercises targeting the lower extremities."
+    CHEST = "Chest", "Exercises targeting the chest."
+    BACK = "Back", "Exercises targeting the upper and lower back."
+    ARMS = "Arms", "Exercises targeting the arms."
+    SHOULDERS = "Shoulders", "Exercises targeting specifically the shoulders."
+    CORE = "Core", "Exercises targeting all areas of the abs and core."
+
+    def __new__(cls, *args, **kwds):
+        obj = object.__new__(cls)
+        obj._value_ = args[0]
+        return obj
+
+    # ignore the first param since it's already set by __new__
+    def __init__(self, _: str, description: str = None):
+        self._description_ = description
+
+    def __str__(self):
+        return self.value
+
+    # Makes description read-only
+    @property
+    def description(self):
+        return self._description_
 
 @dataclass
-class SetEntry:
-    set_number: int
-    reps: int
-    weight: str  # allow text like "bodyweight" or "body+15"
-
-
-@dataclass
-class ExerciseEntry:
+class Exercise:
     name: str
-    sets: List[SetEntry]
-
+    parent_exercise: Optional["Exercise"]
+    muscle_groups: List[MuscleGroup]
+    description: str
+    form_notes: str
+    
+@dataclass
+class Set:
+    exercise: Exercise
+    reps: int
+    weight: str
+    notes: str
 
 @dataclass
-class Session:
-    date: str  # ISO format "YYYY-MM-DD"
-    exercises: List[ExerciseEntry]
-    tags: List[str] = field(default_factory=list)
+class Workout:
+    date: str
+    exercises: List[Set]
     notes: Optional[str] = None
-
-
-def write_sessions_to_csv(sessions: List[Session], filename: str):
-    """Write sessions to a flattened CSV file."""
-    with open(filename, "w", newline="") as f:
-        writer = csv.writer(f)
-        writer.writerow(
-            ["date", "exercise", "set_number", "reps", "weight", "tags", "notes"]
-        )
-
-        for session in sessions:
-            for ex in session.exercises:
-                for s in ex.sets:
-                    writer.writerow(
-                        [
-                            session.date,
-                            ex.name,
-                            s.set_number,
-                            s.reps,
-                            s.weight,
-                            ",".join(session.tags),
-                            session.notes or "",
-                        ]
-                    )
-
-
-def read_sessions_from_csv(filename: str) -> List[Session]:
-    """Read sessions back from CSV into memory."""
-    sessions: dict[str, Session] = {}
-
-    with open(filename, newline="") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            date = row["date"]
-            if date not in sessions:
-                sessions[date] = Session(
-                    date=date,
-                    exercises=[],
-                    tags=row["tags"].split(",") if row["tags"] else [],
-                    notes=row["notes"] or None,
-                )
-            session = sessions[date]
-
-            # Find or create exercise
-            ex_name = row["exercise"]
-            exercise = next((e for e in session.exercises if e.name == ex_name), None)
-            if not exercise:
-                exercise = ExerciseEntry(name=ex_name, sets=[])
-                session.exercises.append(exercise)
-
-            # Add set
-            set_entry = SetEntry(
-                set_number=int(row["set_number"]),
-                reps=int(row["reps"]),
-                weight=row["weight"],
-            )
-            exercise.sets.append(set_entry)
-
-    return list(sessions.values())

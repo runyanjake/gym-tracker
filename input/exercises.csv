@@ -1,0 +1,19 @@
+name,parent_exercise,muscle_groups,description,form_notes
+Squat,,"Legs, Back",,"Toes slightly out, move butt back first, tighten core and fight the back trying to bend over forward."
+Overhead Press,,"Shoulders, Back",,
+Military Press,Overhead Press,"Shoulders, Back",Overhead press but with feet pressed together.,"At full extension, lean head forward a little and hold. Move consistently and purposefully thorughout the movement."
+Lat Pulldown,,Back,,
+Reverse Lat Pulldown,Lat Pulldown,Back,,
+Single Arm Lat Pulldown,Lat Pulldown,Back,,
+Single Arm Reverse Lat Pulldown,Lat Pulldown,Back,,
+Bench Press,,Chest,,
+Decline Bench Press,Bench Press,Chest,,
+Incline Bench Press,Bench Press,"Chest, Shoulders",,
+Dumbbell Bench Press,Bench Press,Chest,,
+Decline Dumbbell Bench Press,Bench Press,Chest,,
+Incline Dumbbell Bench Press,Bench Press,"Chest, Shoulders",,
+Sit-Ups,,Upper Core,,
+Crunches,Sit-Ups,Upper Core,,
+Straight Leg Cruches,Crunches,Lower Core,,
+Russian Twists,,Obliques,,
+Leg Lifts,,Lower Core,,
