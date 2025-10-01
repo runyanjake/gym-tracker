@@ -1,7 +1,12 @@
 # utilities.py
+import re
 from collections import defaultdict
 from typing import Dict, List
 from workout import Workout, MuscleGroup
+
+def safe_filename(name: str) -> str:
+    """Convert exercise name to a uniform safe filename."""
+    return re.sub(r"[^\w\d]+", "_", name.strip().lower())
 
 def group_by_muscle(workouts: List[Workout]) -> Dict[MuscleGroup, int]:
     """

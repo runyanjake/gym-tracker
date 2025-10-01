@@ -1,0 +1,51 @@
+name: Update Charts and README
+
+on:
+  push:
+    paths:
+      - "input/**"
+
+jobs:
+  update-charts:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write 
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install UV
+        run: pip install uv
+
+      - name: Sync dependencies via UV
+        run: uv sync
+
+      - name: Generate charts
+        run: uv run python main.py
+
+      - name: Generate README table
+        run: uv run python generate_readme_table.py
+
+      - name: Commit and Push if files changed
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add output/ README.md
+          
+          if git diff --staged --quiet; then
+            echo "No effective changes detected in output/ or README.md. Skipping commit and push."
+          else
+            echo "Changes detected. Committing and pushing..."
+            git commit -m "Update charts and README [skip ci]"
+            
+            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
+            
+            echo "Successfully committed and pushed new data."
+          fi
+

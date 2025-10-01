@@ -32,10 +32,33 @@ date,exercise,reps,weight,notes
 ## Examples
 I'm checking in my own workout data as an example.
 
-See example visualizations under `output/`.
+The below are auto-generated charts created with a Github Workflow.
+
+<!-- CHARTS_TABLE_START -->
+<table>
+<tr><th>Exercise</th><th>Volume</th><th>Reps</th><th>Weight Stats</th></tr>
+<tr><td>Bench Press</td><td><img src="output/volume/bench_press.svg" width="200"/></td><td><img src="output/reps/bench_press.svg" width="200"/></td><td><img src="output/weight_stats/bench_press.svg" width="200"/></td></tr>
+<tr><td>Dumbbell Bench Press</td><td><img src="output/volume/dumbbell_bench_press.svg" width="200"/></td><td><img src="output/reps/dumbbell_bench_press.svg" width="200"/></td><td><img src="output/weight_stats/dumbbell_bench_press.svg" width="200"/></td></tr>
+<tr><td>Leg Lifts</td><td><img src="output/volume/leg_lifts.svg" width="200"/></td><td><img src="output/reps/leg_lifts.svg" width="200"/></td><td><img src="output/weight_stats/leg_lifts.svg" width="200"/></td></tr>
+<tr><td>Military Press</td><td><img src="output/volume/military_press.svg" width="200"/></td><td><img src="output/reps/military_press.svg" width="200"/></td><td><img src="output/weight_stats/military_press.svg" width="200"/></td></tr>
+<tr><td>Russian Twists</td><td><img src="output/volume/russian_twists.svg" width="200"/></td><td><img src="output/reps/russian_twists.svg" width="200"/></td><td><img src="output/weight_stats/russian_twists.svg" width="200"/></td></tr>
+<tr><td>Single Arm Lat Pulldown</td><td><img src="output/volume/single_arm_lat_pulldown.svg" width="200"/></td><td><img src="output/reps/single_arm_lat_pulldown.svg" width="200"/></td><td><img src="output/weight_stats/single_arm_lat_pulldown.svg" width="200"/></td></tr>
+<tr><td>Single Arm Reverse Lat Pulldown</td><td><img src="output/volume/single_arm_reverse_lat_pulldown.svg" width="200"/></td><td><img src="output/reps/single_arm_reverse_lat_pulldown.svg" width="200"/></td><td><img src="output/weight_stats/single_arm_reverse_lat_pulldown.svg" width="200"/></td></tr>
+<tr><td>Sit Ups</td><td><img src="output/volume/sit_ups.svg" width="200"/></td><td><img src="output/reps/sit_ups.svg" width="200"/></td><td><img src="output/weight_stats/sit_ups.svg" width="200"/></td></tr>
+<tr><td>Squat</td><td><img src="output/volume/squat.svg" width="200"/></td><td><img src="output/reps/squat.svg" width="200"/></td><td><img src="output/weight_stats/squat.svg" width="200"/></td></tr>
+</table>
+<!-- CHARTS_TABLE_END -->
 
 ## Build/Run
 Built using `uv` (this project was a way for me to practice using it)
+
+### Running Locally
+This repo will run the following steps automatically when a commit is made via a Github Workflow.
+```
+uv run main.py
+uv run generate_readme_table.py
+```
+
 
 ### Relevant uv Commands
 ```
