@@ -36,7 +36,7 @@ The below are auto-generated charts created with a Github Workflow.
 
 <!-- CHARTS_TABLE_START -->
 <table>
-<tr><th>Exercise</th><th>Volume</th><th>Reps</th><th>Weight Stats</th></tr>
+<tr><th>Exercise</th><th>Volume (total lbs)</th><th>Reps</th><th>Weight Stats (lbs)</th></tr>
 <tr><td>Bench Press</td><td><img src="output/volume/bench_press.svg" width="200"/></td><td><img src="output/reps/bench_press.svg" width="200"/></td><td><img src="output/weight_stats/bench_press.svg" width="200"/></td></tr>
 <tr><td>Dumbbell Bench Press</td><td><img src="output/volume/dumbbell_bench_press.svg" width="200"/></td><td><img src="output/reps/dumbbell_bench_press.svg" width="200"/></td><td><img src="output/weight_stats/dumbbell_bench_press.svg" width="200"/></td></tr>
 <tr><td>Leg Lifts</td><td><img src="output/volume/leg_lifts.svg" width="200"/></td><td><img src="output/reps/leg_lifts.svg" width="200"/></td><td><img src="output/weight_stats/leg_lifts.svg" width="200"/></td></tr>

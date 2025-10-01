@@ -2,7 +2,6 @@
 import os
 from utilities import safe_filename
 
-# Folders for charts
 folders = {
     "Volume": "output/volume",
     "Reps": "output/reps",
@@ -18,14 +17,8 @@ for chart_type, folder in folders.items():
     for f in os.listdir(folder):
         if not f.endswith(".svg"):
             continue
-        base = f[:-4]  # strip .svg
-        # Remove suffix (_volume, _reps, _weight)
-        for suffix in ["_volume", "_reps", "_weight"]:
-            if base.endswith(suffix):
-                name = base[: -len(suffix)]
-                break
-        else:
-            name = base
+            
+        name = f[:-4]  # strip .svg
 
         name = safe_filename(name)
         if name not in exercise_files:
@@ -51,7 +44,7 @@ for ex in sorted(exercise_files.keys()):
 # Full HTML table
 table_html = (
     "<table>\n"
-    "<tr><th>Exercise</th><th>Volume</th><th>Reps</th><th>Weight Stats</th></tr>\n"
+    "<tr><th>Exercise</th><th>Volume (total lbs)</th><th>Reps</th><th>Weight Stats (lbs)</th></tr>\n"
     + "\n".join(rows)
     + "\n</table>"
 )
@@ -64,6 +57,7 @@ with open(readme_path, "r") as f:
 import re
 pattern = r"<!-- CHARTS_TABLE_START -->.*<!-- CHARTS_TABLE_END -->"
 replacement = f"<!-- CHARTS_TABLE_START -->\n{table_html}\n<!-- CHARTS_TABLE_END -->"
+
 readme_content = re.sub(pattern, replacement, readme_content, flags=re.DOTALL)
 
 with open(readme_path, "w") as f:
