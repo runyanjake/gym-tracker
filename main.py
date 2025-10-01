@@ -11,31 +11,43 @@ def main():
     exercises = read_exercises_from_csv("input/exercises.csv")
     workouts = read_workouts_from_csv("input/data.csv", exercises)
 
-    # Create visualizations for lifting volume
+    plot_charts(exercises, workouts)
+    summarize_progress(workouts)
+
+def plot_charts(exercises, workouts):
+    all_exercises = set(
+        s.exercise.name
+        for w in workouts
+        for s in w.exercises
+    )
+
     weighted_exercises = set(
         s.exercise.name
         for w in workouts
         for s in w.exercises
         if s.weight
     )
-    for exercise_name in weighted_exercises:
-        plot_lifting_volume(workouts, exercise_name)
 
-    # Create visualizations for weight tracking over time.
-    for exercise_name in weighted_exercises:
-        plot_weight_stats(workouts, exercise_name)
-
-    # Create visualizations for rep based exercises
-    rep_only_exercises = set(
+    non_weighted_exercises = set(
         s.exercise.name
         for w in workouts
         for s in w.exercises
         if not s.weight
     )
-    for exercise_name in rep_only_exercises:
+
+    #  Charts for lifting volume (only weighted exercises)
+    for exercise_name in weighted_exercises:
+        plot_lifting_volume(workouts, exercise_name)
+
+    # Charts for weight tracking over time. (only weighted exercises)
+    for exercise_name in weighted_exercises:
+        plot_weight_stats(workouts, exercise_name)
+
+    # Charts for rep based exercises (all exercises)
+    for exercise_name in all_exercises:
         plot_total_reps(workouts, exercise_name)
 
-    summarize_progress(workouts)
+    print("Done saving charts!\n")
 
 if __name__ == "__main__":
     main()

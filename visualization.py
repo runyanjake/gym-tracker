@@ -22,7 +22,7 @@ def plot_lifting_volume(workouts: list[Workout], exercise_name: str):
     volume_by_date = defaultdict(int)
     for w in workouts:
         for s in w.exercises:
-            if s.exercise.name == exercise_name and s.weight:
+            if s.exercise.name == exercise_name and s.weight and s.reps:
                 try:
                     weight = float(s.weight)
                     volume_by_date[w.date] += s.reps * weight
@@ -57,7 +57,7 @@ def plot_total_reps(workouts: list[Workout], exercise_name: str):
     reps_by_date = defaultdict(int)
     for w in workouts:
         for s in w.exercises:
-            if s.exercise.name == exercise_name and not s.weight:
+            if s.exercise.name == exercise_name and s.reps:
                 reps_by_date[w.date] += s.reps
 
     if not reps_by_date:
