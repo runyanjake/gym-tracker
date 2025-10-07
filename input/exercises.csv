@@ -1,27 +1,35 @@
 name,parent_exercise,muscle_groups,description,form_notes
-Squat,,"Legs, Back",Classic squat that engages the glutes.,"Toes slightly out, move butt back first, tighten core and fight the back trying to bend over forward."
-Overhead Press,,"Shoulders, Back",Pushing the bar above the head to a full extension.,
-Military Press,Overhead Press,"Shoulders, Back",Overhead press but with feet pressed together.,"At full extension, lean head forward a little and hold. Move consistently and purposefully thorughout the movement."
+Tricep Extension,,Arms,Tricep exercise pushing the weight downward.,
 Lat Pulldown,,Back,"Pulling down with palms facing you, engaging the lats.","Lat pulldowns are best done slowly, especially while building up strength."
 Reverse Lat Pulldown,Lat Pulldown,Back,"Reverse grip pulldown, with palms facing away.",
 Single Arm Lat Pulldown,Lat Pulldown,Back,One arm at a time lat pulldown.,
 Single Arm Reverse Lat Pulldown,Lat Pulldown,Back,One arm at a time reverse lat pulldown.,
+Back Extension,,Back,Back extension from bent to straight on back extension machine.,Doing this exercise slowly is important for building up back strength.
+Barbell Row,,Back,Back engaging exercise going from straight to bent arms.,
+Reverse Grip Barbell Row,Barbell Row,Back,"Barbell row, with supinated grip.",
+Deadlift,,Back,Classic deadlift.,Keep the back from bending over by engaging the core.
 Bench Press,,Chest,Pushing the bar away from the chest while lying down.,Bar should go down to just about where it touches the chest. Or at least until elbows are 90 degress.
 Decline Bench Press,Bench Press,Chest,Bench press with the bench angled down.,
-Incline Bench Press,Bench Press,"Chest, Shoulders",Bench press with the bench angled up.,
 Dumbbell Bench Press,Bench Press,Chest,Bench press using dumbbells.,
 Decline Dumbbell Bench Press,Bench Press,Chest,Decline bench press using dumbbells.,
+Incline Bench Press,Bench Press,"Chest, Shoulders",Bench press with the bench angled up.,
 Incline Dumbbell Bench Press,Bench Press,"Chest, Shoulders",Incline bench press using dumbbells.,
 Dumbbell Chest Fly,,"Chest, Shoulders",Center contraction bringing arms from the side to the center.,It should not feel like a press. Can bend arms up to 90 degrees.
-Back Extension,,Back,Back extension from bent to straight on back extension machine.,Doing this exercise slowly is important for building up back strength.
-Sit-Ups,,Upper Core,Classic sit-up with feet planted on the ground.,Feet should not come off the ground.
-Crunches,Sit-Ups,Upper Core,Classic sit-up variation with knees in the air.,
-Straight Leg Cruches,Crunches,Lower Core,Classic sit-up variation with legs straight in the air.,
-Russian Twists,,Obliques,Side-to-side motion that engages the obliques.,"Do not do this one fast, it is best done slower and more controlled."
-Leg Lifts,,Lower Core,"While lying on back, life legs from a neutral position upward.",
-High Crunches,Crunches,Upper Core,Crunches with feet flat on ground and arms extended vertically.,
 Plank,,Core,The classic basic plank.,Measured in seconds.
 Star Plank,Plank,Core,Plank variation with arms and legs spread out to the side.,
-Sitting Punches,,Obliques,From sit-up position punch to the left and right of the knees.,
 V With Rotations,,Core,V-sit-ups with outstretched arms reaching to the left and right of knees.,
 Half Wipers,,Core,Crunch form but moving knees to the ground on each side.,Use arms for stability. Going slow is important.
+Flutter Kicks,,Core,With legs outstretched move them up and down in a short range.,
+Side Plank Crunches,,Core,"In plank form, bring lower knee and top elbow close to each other.",
+Squat,,"Legs, Back",Classic squat that engages the glutes.,"Toes slightly out, move butt back first, tighten core and fight the back trying to bend over forward."
+Straight Leg Cruches,Crunches,Lower Core,Classic sit-up variation with legs straight in the air.,
+Leg Lifts,,Lower Core,"While lying on back, life legs from a neutral position upward.",
+Bicycle Crunches,,Lower Core,Like you're riding a bike on your back.,
+Russian Twists,,Obliques,Side-to-side motion that engages the obliques.,"Do not do this one fast, it is best done slower and more controlled."
+Sitting Punches,,Obliques,From sit-up position punch to the left and right of the knees.,
+Side Jack-Knives,,Obliques,"Lying on the side with hand behind head, elevate elbow and top foot at the same time.",
+Overhead Press,,"Shoulders, Back",Pushing the bar above the head to a full extension.,
+Military Press,Overhead Press,"Shoulders, Back",Overhead press but with feet pressed together.,"At full extension, lean head forward a little and hold. Move consistently and purposefully thorughout the movement."
+Sit-Ups,,Upper Core,Classic sit-up with feet planted on the ground.,Feet should not come off the ground.
+Crunches,Sit-Ups,Upper Core,Classic sit-up variation with knees in the air.,
+High Crunches,Crunches,Upper Core,Crunches with feet flat on ground and arms extended vertically.,
